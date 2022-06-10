@@ -1,0 +1,351 @@
+/* 
+
+até 425px --> Mobile
+de 425px até 768px --> Mobile
+de 768px em diante --> Mobile
+
+box-sizing:
+- content-box --> Primeiro é calculado os tamanhos (width: 100%) e depois os espaçamentos (padding, margin, border)
+- border-box --> Primeiro é calculado os espaçamentos (padding, margin, border) e depois os tamanhos (width: 100%)
+
+Unidade:
+- 100vh --> 100% da altura da viewport
+- pt --> Obedece a configuração de fonte do sistema operacional (acessibilidade)
+- rem --> É o tamanho relativo em relação ao font-size da tag html
+- em --> É o tamanho relativo em relação ao font-size do elemento pai
+
+// Exemplo rem e em
+html {
+    font-size: 20px;
+}
+
+.pai {
+    font-size: 50px;
+}
+
+1rem --> 20px; (100% do font-size do html)
+0.5rem --> 10px; (50% do font-size do html)
+1.5rem --> 30px; (150% do font-size do html)
+
+// no elemento filho
+1em --> 50px; (100% do font-size do .pai)
+0.5em --> 25px; (50% do font-size do .pai)
+1.5em --> 75px; (150% do font-size do .pai)
+
+OBS: 
+- tamanhos em porcentagem são especificados de acordo com o tamanho do elemento pai e só funciona se o elemento pai tiver um tamanho definido 
+- Hierarquia de prioridades para a estilização (id > class > tagName)
+*/
+
+/* Resetando elementos */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+/* Definindo variáveis */
+
+:root {
+    --bgPrimary: #08090B;
+    --bgSecondary: #151819;
+    --bgTerciary: #2c3233;
+    --accent: #ed145b;
+
+    --textColorPrimary: #91A3AD;
+    --textColorSecondary: #616D72;
+    --textColorTerciary: white;
+
+    --bgPost: #1B1E22;
+}
+
+/* Geral */
+
+body {
+    background-color: var(--bgPrimary);
+    height: 100vh;
+    color: var(--textColorPrimary);
+    font-family: 'Montserrat';
+}
+
+/* Menu superior */
+
+.main-header {
+    background-color: var(--bgSecondary);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px 0 var(--accent);
+}
+
+.main-header>div {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.main-header>div>.img-logo {
+    padding: 2px 0px 5px 12px;
+}
+
+.main-header>div>.img-profile {
+    width: 48px;
+}
+
+.main-header>div>p {
+    font-style: normal;
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.main-header>.btn-login {
+    position: relative;
+    width: 20px;
+    height: 25px;
+    border: 3px solid var(--accent);
+    margin: 0px 10px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+.main-header>.btn-login:before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 3px;
+    background-color: #eee;
+    top: 50%;
+    left: -3px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    background-color: var(--accent);
+    border-top: 4px solid var(--bgPrimary);
+    border-bottom: 4px solid var(--bgPrimary);
+}
+
+
+.main-header>.btn-login:after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%) rotate(45deg);
+    -webkit-transform: translateY(-50%) rotate(45deg);
+    -moz-transform: translateY(-50%) rotate(45deg);
+    -ms-transform: translateY(-50%) rotate(45deg);
+    -o-transform: translateY(-50%) rotate(45deg);
+    background-color: transparent;
+    border-top: 3px solid var(--accent);
+    border-right: 3px solid var(--accent);
+}
+
+/* Feed */
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+/* Post */
+
+.post {
+    background-color: var(--bgPost);
+    display: flex;
+    flex-direction: column;
+    margin: 11px 15px;
+    padding: 22px 16px;
+}
+
+/* Cabeçalho do Post */
+
+.post>header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.post>header>img {
+    padding: 0 1px;
+    width: 78.8px;
+}
+
+.info-post {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-post>p {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+}
+
+.info-post>span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: var(--textColorSecondary);
+}
+
+/* Corpo do Post */
+
+.post>main {
+    margin-top: 23px;
+}
+
+.post>main>h1{
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+}
+
+.post>main>p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    padding-left: 21px;
+    margin: 11px 0;
+    border-left: 2px solid var(--accent);
+}
+
+.post>main>img {
+    width: 100%;
+}
+
+/* Rodapé do Post */
+
+.post>footer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px;
+}
+
+.tecnologias {
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+}
+
+.tecnologias>span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    padding: 3px 10px;
+    background-color: var(--bgPrimary);
+}
+
+.post>footer>h2{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    margin-bottom: -10px;
+}
+
+.comentario {
+    background-color: var(--bgPrimary);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 9px 13px;
+}
+
+.comentario>header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.comentario>header>img {
+    width: 33px;
+}
+
+.info-comentario {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-comentario>p {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+}
+
+.info-comentario>span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: var(--textColorSecondary);
+}
+
+.comentario>main>p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    margin: 5px;
+    padding-left: 15px;
+    border-left: 2px solid var(--accent);
+}
+
+/* Form Comentar */
+
+.comentar-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comentar-form>input {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    border: 1px solid var(--accent);
+    background-color: var(--bgPrimary);
+    color: var(--textColorTerciary);
+    padding: 10px 8px;
+    font-weight: bold;
+    height: 100%;
+    flex-grow: 1;
+    outline-style: none;
+    cursor: pointer;
+}
+
+.comentar-form>button {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    border-style: initial;
+    border: 1px solid var(--accent);
+    background-color: var(--accent);
+    color: var(--textColorTerciary);
+    padding: 10px 8px;
+    font-weight: bold;
+    font-size: 12pt;
+    height: 100%;
+    cursor: pointer;
+}

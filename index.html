@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIAP - Mobile Design</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <!-- Referência: https://www.figma.com/file/2mNFkUZNBBdBQuq9VggJ9W/FIAP-SOCIAL?node-id=0%3A1 -->
+    <header class="main-header">
+        <div>
+            <img class="img-logo" src="./imgs/lets-rock.png" alt="">
+            <img class="img-profile" src="./imgs/profile1.png" alt="">
+            <p>Beltrano</p>
+        </div>
+        <span class="btn-login"></span>
+    </header>
+    <main class="feed">
+        <article class="post">
+            <header>
+                <img src="./imgs/profile2.png" alt="">
+                <div class="info-post">
+                    <p>por Fulano de Tal</p>
+                    <span>em 18/08/2021 às 13:00</span>
+                </div>
+            </header>
+            <main>
+                <h1>Título da postagem</h1>
+                <p>
+                    Aqui ficará a descrição da postagem
+                    <br>Que pode ter mais de uma linha
+                    <br>Várias, inclusive
+                </p>
+                <img src="./imgs/post1.png" alt="">
+            </main>
+            <footer>
+                <div class="tecnologias">
+                    <span>Front-end</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+                </div>
+                <h2>Comentários</h2>
+                <div class="comentario">
+                    <header>
+                        <img src="./imgs/profile2.png" alt="">
+                        <div class="info-comentario">
+                            <p>por Fulano de Tal</p>
+                            <span>em 18/08/2021 às 13:00</span>
+                        </div>
+                    </header>
+                    <main>
+                        <p>
+                            Muito legal sua postagem
+                        </p>
+                    </main>
+                </div>
+                <div class="comentario">
+                    <header>
+                        <img src="./imgs/profile2.png" alt="">
+                        <div class="info-comentario">
+                            <p>por Fulano de Tal</p>
+                            <span>em 18/08/2021 às 13:00</span>
+                        </div>
+                    </header>
+                    <main>
+                        <p>
+                            Muito legal sua postagem
+                        </p>
+                    </main>
+                </div>
+                <div class="comentar-form">
+                    <input type="text" placeholder="Escreva um comentário" class="input-comentar">
+                    <button class="btn-comentar">
+                        Enviar
+                    </button>
+                </div>
+            </footer>
+        </article>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
