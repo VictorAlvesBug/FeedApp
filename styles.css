@@ -101,7 +101,13 @@ body {
     letter-spacing: 0.2px;
 }
 
-.main-header>.btn-login {
+/* Icone de Login desenhado via CSS*/
+
+.main-header>.my-btn-login.hide{
+    display: none;
+}
+
+.main-header>.my-btn-login {
     position: relative;
     width: 20px;
     height: 25px;
@@ -114,8 +120,7 @@ body {
     -o-border-radius: 5px;
 }
 
-
-.main-header>.btn-login:before {
+.main-header>.my-btn-login:before {
     content: '';
     position: absolute;
     width: 18px;
@@ -134,7 +139,7 @@ body {
 }
 
 
-.main-header>.btn-login:after {
+.main-header > .my-btn-login:after {
     content: '';
     position: absolute;
     width: 8px;
@@ -151,12 +156,36 @@ body {
     border-right: 3px solid var(--accent);
 }
 
+/* Icone do Google Material Icons */
+
+.main-header > .material-icons.hide{
+    display: none;
+}
+
+.main-header > .material-icons{
+    font-size: 30px;
+    padding: 20px;
+    color: var(--accent);
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.main-header>.material-icons:hover{
+    transform: scale(1.1);
+    color: white;
+}
+
 /* Feed */
 
 .feed {
     display: flex;
     flex-direction: column;
     gap: 26px;
+}
+
+.nenhum-post,
+.nenhum-comentario{
+    padding: 10px 20px;
 }
 
 /* Post */
@@ -226,7 +255,8 @@ body {
 }
 
 .post>main>img {
-    width: 100%;
+    width: calc(100% + 32px);
+    margin-left: -16px;
 }
 
 /* Rodapé do Post */
@@ -235,7 +265,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    padding: 14px;
+}
+
+.post>footer>.comentarios {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 .tecnologias {
@@ -243,6 +278,7 @@ body {
     gap: 10px;
     justify-content: start;
     align-items: center;
+    padding-top: 13px;
 }
 
 .tecnologias>span {
